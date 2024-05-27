@@ -4,5 +4,5 @@ from .models import ElectroGuitar
 class ElectroGuitarSerializer(serializers.ModelSerializer):
     class Meta:
         model = ElectroGuitar
-        fields = ('color', 'brand', 'form')
+        fields = ('rate','color', 'brand', 'form')
     

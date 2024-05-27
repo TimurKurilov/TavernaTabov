@@ -5,7 +5,7 @@ from django.urls import include
 from catalog.views import ElectroGuitarViewsets
 
 router = DefaultRouter()
-router.register('electro', ElectroGuitarViewsets)
+router.register(r'electro', ElectroGuitarViewsets)
 
 urlpatterns = [
     path('admin/', admin.site.urls),

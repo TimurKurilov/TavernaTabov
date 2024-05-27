@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MinValueValidator, MaxValueValidator
 
 # Create your models here.
 class ElectroGuitar(models.Model):
@@ -30,3 +31,9 @@ class ElectroGuitar(models.Model):
     color = models.CharField(max_length=20, choices=COLOR_CHOICES, blank=True, null=False)
     form = models.CharField(max_length=20, choices=FORM_CHOICES, blank=True, null=False)
     brand = models.CharField(max_length=20, choices=BRAND_CHOICES, blank=True, null=False)
+    rate = models.PositiveSmallIntegerField(
+        validators=[
+            MinValueValidator(1),
+            MaxValueValidator(10)
+        ]
+    )
